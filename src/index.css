@@ -11,27 +11,10 @@ body {
 }
 
 .container {
-	max-width: 1024px;
-	padding-left: 16px;
-	padding-right: 16px;
-	width: 95%;
-	margin: 0 auto;
-}
-
-img {
-	max-width: 100%;
-}
-
-.content {
-	padding: 20px 0;
-}
-
-.content__sort {
-	margin-bottom: 40px;
-}
-
-.result {
-	font-size: 24px;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
 }
 
 
