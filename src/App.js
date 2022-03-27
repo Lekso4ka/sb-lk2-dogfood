@@ -1,14 +1,12 @@
 import React from 'react';
-import Card from "./components/Card/Card.js";
-
+import Header from './components/Header/Header.jsx';
+import Cards from "./components/Cards";
+import Footer from "./components/Footer";
 function App () {
-	const pets = ["Dog", "Cat", "Bird", "Hamster", "Horse", "Racoon"];
-	const content = pets.map(pet => <Card pet={pet}/>);
 	return <>
-		<h1>React is happy!</h1>
-		<div className="container">
-			{content}
-		</div>
+		<Header/>
+		<Cards/>
+		<Footer/>
 	</>
 }
 
