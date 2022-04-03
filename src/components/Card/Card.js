@@ -9,7 +9,7 @@ class Card extends React.Component {
 	render() {
 		return (
 			<div className="card">
-				<img className="pic" src={this.props.picture} alt={this.props.name}/>
+				<img className="pic" src={this.props.pictures} alt={this.props.name}/>
 				<div className="price">{this.props.price}</div>
 				<div className="count">{this.props.stock}</div>
 				<div className="name">{this.props.name}</div>

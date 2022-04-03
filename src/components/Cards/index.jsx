@@ -5,7 +5,7 @@ import Card from "../Card/Card.js";
 const Cards = ({goods}) => {
     return (
         <div className="container">
-            {goods.map(el => <Card {...el} key={el.id}/>)}
+            {goods.map(el => <Card {...el} key={el._id}/>)}
         </div>
     )
 }
