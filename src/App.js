@@ -1,11 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import Header from './components/Header/Header.jsx';
-import Cards from "./components/Cards";
 import Footer from "./components/Footer";
-// import Test from "./components/Test";
 import api from "./Api.js";
-// import data from "./data.json";
-import SearchInfo from './components/SearchInfo/index.jsx';
+
+import Cart from "./pages/Cart";
+import Catalog from "./pages/Catalog";
+import Contacts from "./pages/Contacts";
+import Favorites from "./pages/Favorites";
+import Main from "./pages/Main";
+import Product from "./pages/Product";
+import Profile from "./pages/Profile";
+import {Routes, Route} from "react-router-dom";
+
 
 function App () {
 	const [searchText, setSearch] = useState("");
@@ -31,8 +37,31 @@ function App () {
 
 	return <>
 		<Header searchText={searchText} appHandler={search}/>
-		<SearchInfo text={searchText} cnt={cnt}/>
-		<Cards goods={goods}/>
+		<main>
+			<Routes>
+				<Route path="/cart" element={
+					<Cart name="Корзина"/>
+				}/>
+				<Route path="/catalog" element={
+					<Catalog name="Каталог" searchText={searchText} cnt={cnt} goods={goods}/>
+				}/>
+				<Route path="/contacts" element={
+					<Contacts name="Контакты"/>
+				}/>
+				<Route path="/favorites" element={
+					<Favorites name="Избранное"/>
+				}/>
+				<Route path="/" element={
+					<Main name="Главная"/>
+				}/>
+				<Route path="/product" element={
+					<Product name="Товар"/>
+				}/>
+				<Route path="/profile" element={
+					<Profile name="Личный кабинет"/>
+				}/>
+			</Routes>
+		</main>
 		<Footer/>
 	</>
 }
