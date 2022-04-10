@@ -4,10 +4,14 @@ import Search from "../Search";
 // SPA - Single Page Application - одностраничное приложение
 import {Link} from "react-router-dom";
 
-const Header = function({searchText, appHandler}) {
+const Header = function({searchText, appHandler, modalActivity, setModalActivity}) {
     const searchHandler = inpVal => {
         console.log("header", inpVal);
         appHandler(inpVal);
+    }
+    const clickHandler = (e) => {
+        // e.preventDefault();
+        setModalActivity(!modalActivity);
     }
     return (
         <header>
@@ -18,8 +22,8 @@ const Header = function({searchText, appHandler}) {
                     <Link to="/favorites">Избранное</Link>
                     <Link to="/cart">Корзина</Link>
                     <Link to="/profile">Профиль</Link>
-                    <a href="" onClick={e => e.preventDefault()}>SignIn</a>
-                    <a href="" onClick={e => e.preventDefault()}>SignUp</a>
+                    <Link to="/login" onClick={clickHandler}>SignIn</Link>
+                    <Link to="/signup" onClick={clickHandler}>SignUp</Link>
                 </nav>
             </div>
         </header>
