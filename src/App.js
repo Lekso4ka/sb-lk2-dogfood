@@ -22,16 +22,16 @@ function App () {
 	const search = val => {
 		console.log("App", val);
 		setSearch(val);
+		console.log(data);
 		const newCards = data.filter(el => el.name.toLowerCase().includes(val.toLowerCase()));
-		setGoods(newCards);
+		setGoods(newCards); // []
 		setSearchCnt(newCards.length);
 	}
 
 	useEffect(() => {
 		api.getProductList().then(ans => {
-			console.log(ans[0]);
-			setData(ans);
-			setGoods(ans);
+			setData(ans.products);
+			setGoods(ans.products); // {total, products: []}
 		});
 	}, []);
 

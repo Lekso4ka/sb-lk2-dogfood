@@ -18,6 +18,8 @@ const Header = function({searchText, appHandler}) {
                     <Link to="/favorites">Избранное</Link>
                     <Link to="/cart">Корзина</Link>
                     <Link to="/profile">Профиль</Link>
+                    <a href="" onClick={e => e.preventDefault()}>SignIn</a>
+                    <a href="" onClick={e => e.preventDefault()}>SignUp</a>
                 </nav>
             </div>
         </header>
